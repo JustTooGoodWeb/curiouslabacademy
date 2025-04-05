@@ -17,7 +17,7 @@ if ($event->event === 'charge.success') {
         CURLOPT_URL => "https://api.paystack.co/transaction/verify/" . rawurlencode($reference),
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTPHEADER => [
-            "Authorization: Bearer sk_live_c26e98c514169df543e8ee06d1a809e8958f1e35"
+            "Authorization: Bearer YOUR_SECRET_KEY"
         ],
     ));
     
