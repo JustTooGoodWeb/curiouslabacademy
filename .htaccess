@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Redirect .php URLs to clean URLs (301 Permanent Redirect)
+RewriteCond %{THE_REQUEST} \s/+(.*?/)?(?:index)?(.*?)\.php[\s?] [NC]
+RewriteRule ^ /%1%2 [R=301,L,NE]
+
+# Internally add .php extension if file exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
